@@ -6,7 +6,7 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:38:22 by sfernand          #+#    #+#             */
-/*   Updated: 2022/11/30 16:14:20 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:42:16 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "printf.h"
@@ -15,19 +15,19 @@
 const char	*ft_arg(va_list arg, const char *str, t_size size)
 {
 	if (*str == 'c')
-		size.len += 1, ft_putchar_fd(va_arg(arg, int), 1);//ftputchar
-	/*else if (*str == 's')
-		size.len += ;
+		size.len += ft_putchar_fd(va_arg(arg, int), 1);
+	else if (*str == 's')
+		size.len += ft_putstr_fd(va_arg(arg, char *), 1);
 	else if (*str == 'p')
-		size.len += ;
+		size.len += ft_void_hexa(va_arg(arg, unsigned long int));
 	else if (*str == 'd' || *str == 'i')
-		size.len += ;
+		size.len += ft_putnbr_fd(va_arg(arg, int), 1);
 	else if (*str == 'u')
-		size.len += ;
+		size.len += ft_putunbr_fd(va_arg(arg, unsigned int), 1);
 	else if (*str == 'x' || *str == 'X')
-		size.len += ;
+		size.len += ft_hexa(va_arg(arg, unsigned int), *str);
 	else if (*str == '%')
-		size.len += ;*/
+		size.len += ft_putchar_fd('%', 1);
 	return (str);
 }
 
@@ -71,13 +71,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(arg);
 	return (size.len);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	ft_printf("%c");
-	printf("cds");
-	return (0);
 }

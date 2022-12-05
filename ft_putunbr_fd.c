@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_puntunbr_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 13:19:36 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/05 16:15:47 by sfernand         ###   ########.fr       */
+/*   Created: 2022/12/02 13:36:38 by sfernand          #+#    #+#             */
+/*   Updated: 2022/12/02 13:57:24 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PRINTF_H
-# define PRINTF_H
 
-# include <stdarg.h>
-# include <unistd.h>
+#include "./libft/libft.h"
 
-typedef struct s_size
+int	ft_putunbr_fd(unsigned int n, int fd)
 {
-	int	len;
-	int	widht;
-}				t_size;
-
-int		ft_printf(const char *str, ...);
-int		ft_putunbr_fd(unsigned int n, int fd);
-int		ft_hexa(unsigned int num, const char str);
-int		ft_void_hexa(unsigned long hexa);
-
-#endif
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putunbr_fd(-n, fd);
+	}
+	else if (n >= 10)
+	{
+		ft_putunbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
+	return (1);
+}
