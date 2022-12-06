@@ -6,13 +6,13 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:46:01 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/05 16:42:08 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:33:28 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "printf.h"
 #include "./libft/libft.h"
 
-int	ft_hexa_len(uintptr_t  hexa)
+int	ft_hexa_len(uintptr_t hexa)
 {
 	int	len;
 
@@ -25,12 +25,20 @@ int	ft_hexa_len(uintptr_t  hexa)
 	return (len);
 }
 
-void	ft_put_hexa(uintptr_t  hexa)
+void	ft_put_hexa(uintptr_t num)
 {
-	if (hexa <= 9)
-		ft_putchar_fd((hexa + '0'), 1);
+	if (num >= 16)
+	{
+		ft_put_hexa(num / 16);
+		ft_put_hexa(num % 16);
+	}
 	else
-		ft_putchar_fd((hexa - 10 + 'a'), 1);
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
 }
 
 int	ft_void_hexa(unsigned long int hexa)

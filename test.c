@@ -6,7 +6,7 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:17:20 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/05 16:42:44 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:34:28 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "printf.h"
@@ -21,7 +21,6 @@ void	n(void)
 int	main(void)
 {
 	char *test;
-
 	test = "test";
 	ft_printf("%c", 'c');
 	n();
