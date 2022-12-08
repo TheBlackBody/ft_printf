@@ -6,11 +6,10 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:46:01 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/06 16:33:28 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:42:06 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
-#include "./libft/libft.h"
+#include "ft_printf.h"
 
 int	ft_hexa_len(uintptr_t hexa)
 {

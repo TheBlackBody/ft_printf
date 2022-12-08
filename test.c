@@ -6,11 +6,10 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:17:20 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/06 16:34:28 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:07:22 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
-#include "./libft/libft.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 void	n(void)
@@ -22,13 +21,15 @@ int	main(void)
 {
 	char *test;
 	test = "test";
-	ft_printf("%c", 'c');
+	ft_printf(" %c %c %c ", '0', 0, '1');
 	n();
-	ft_printf("%s", "Bo@$KO)EXLS)_%jour");
+	ft_printf("%s", test);
+	n();
+	ft_printf(" %d", ft_printf("%s", test));
 	n();
 	ft_printf("%p", test);
 	n();
-	ft_printf("%i", 151);
+	ft_printf("%i 151");
 	n();
 	ft_printf("%d", 151);
 	n();
@@ -40,6 +41,6 @@ int	main(void)
 	n();
 	ft_printf("%%");
 	n();
-	printf("%p", test);
+	printf(" %d", printf("%s", test));
 	return (0);
 }

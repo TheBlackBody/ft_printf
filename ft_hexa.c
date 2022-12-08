@@ -6,12 +6,10 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 15:07:40 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/06 16:35:22 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:28:26 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
-#include "./libft/libft.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
 int	ft_hex_len(unsigned int num)
 {

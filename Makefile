@@ -6,7 +6,7 @@
 #    By: sfernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 13:12:18 by sfernand          #+#    #+#              #
-#    Updated: 2022/12/05 15:45:17 by sfernand         ###   ########.fr        #
+#    Updated: 2022/12/07 09:58:48 by sfernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,12 @@ RM = rm -f
 FILES = ft_printf \
 		ft_putunbr_fd \
 		ft_hexa \
-		ft_void_hex
+		ft_void_hex \
+		ft_putstr_fd \
+		ft_putnbr_fd \
+		ft_putchar_fd \
+		ft_strlen \
+		ft_strchr
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
@@ -49,6 +54,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 t:
-	$(CC) $(CFLAGS) */*.c *.c
+	$(CC) $(CFLAGS) *.c
 
 re: clean all

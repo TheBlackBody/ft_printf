@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puntunbr_fd.c                                   :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 13:36:38 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/07 09:29:45 by sfernand         ###   ########.fr       */
+/*   Created: 2022/11/19 14:05:47 by sfernand          #+#    #+#             */
+/*   Updated: 2022/12/08 16:27:26 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_putunbr_fd(unsigned int n, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putunbr_fd(-n, fd);
-	}
-	else if (n >= 10)
-	{
-		ft_putunbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
+	write(fd, &c, 1);
 	return (1);
 }
