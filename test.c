@@ -6,7 +6,7 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:17:20 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/08 17:07:22 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:06:20 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -21,26 +21,24 @@ int	main(void)
 {
 	char *test;
 	test = "test";
-	ft_printf(" %c %c %c ", '0', 0, '1');
+	ft_printf(" %d",ft_printf("%c",'1'));
 	n();
-	ft_printf("%s", test);
+	ft_printf(" %d", ft_printf(" NULL %s NULL ", NULL));
 	n();
-	ft_printf(" %d", ft_printf("%s", test));
+	ft_printf(" %d", ft_printf("%p", test));
 	n();
-	ft_printf("%p", test);
+	ft_printf(" %d", ft_printf("%i%s%d", 151, "test", 153));
 	n();
-	ft_printf("%i 151");
+	ft_printf(" %d", ft_printf(" %d ", -2147483648));
 	n();
-	ft_printf("%d", 151);
+	ft_printf(" %d", ft_printf("%u", 111));
 	n();
-	ft_printf("%u", 111);
+	ft_printf(" %d", ft_printf("%x", 74657374));
 	n();
-	ft_printf("%x", 74657374);
+	ft_printf(" %d", ft_printf("%X", 74657374));
 	n();
-	ft_printf("%X", 74657374);
+	ft_printf(" %d", ft_printf("%%%%%%%%%%%%%%%%%% test"));
 	n();
-	ft_printf("%%");
-	n();
-	printf(" %d", printf("%s", test));
+	printf(" %d", printf(" %ld ", -2147483648));
 	return (0);
 }

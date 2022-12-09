@@ -6,7 +6,7 @@
 /*   By: sfernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:26:17 by sfernand          #+#    #+#             */
-/*   Updated: 2022/12/08 17:31:48 by sfernand         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:53:33 by sfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -24,5 +24,7 @@ int	ft_putstr_fd(const char *s, int fd)
 			i++;
 		}
 	}
+	else 
+		return (ft_putstr_fd("(null)", 1));
 	return (i);
 }
